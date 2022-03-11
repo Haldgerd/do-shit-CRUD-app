@@ -24,3 +24,5 @@ https://medium.com/geekculture/setting-up-a-react-app-from-scratch-withwebpack-b
    <strong>SyntaxError: Cannot use import statement outside a module</strong>
 
    <strong>SOLUTION: </strong> If returning "type": "module" to package.json, ERROR assigned under point 2 occurs again.
+
+   https://stackoverflow.com/questions/58273824/typescript-cannot-use-import-statement-outside-a-module/60225870#60225870
