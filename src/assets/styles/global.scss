@@ -1,4 +1,7 @@
+@use './variables';
+
 h1 {
     font-family: monospace;
     font-size: 4rem;
+    color: variables.$color-primary-PinkPeach;
 }

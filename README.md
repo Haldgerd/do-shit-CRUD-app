@@ -28,5 +28,18 @@ https://medium.com/geekculture/setting-up-a-react-app-from-scratch-withwebpack-b
     https://stackoverflow.com/questions/58273824/typescript-cannot-use-import-statement-outside-a-module/60225870#60225870
 
     IMPORTANT: Use ESM syntax, for importing and exporting files! Add "type": "module" to package.json.
+    https://gist.github.com/johnrichardrinehart/c8ec6ab1e60f39fc3b8dc738db649ec0 - some dev server properties are not supported anymore. NOTE!
 
-    https://gist.github.com/johnrichardrinehart/c8ec6ab1e60f39fc3b8dc738db649ec0
+3. <strong>eslint --init</strong> <br>
+   eslint : The term 'eslint' is not recognized as the name of a cmdlet, function, script file, or  
+   operable program. Check the spelling of the name, or if a path was included, verify that the path is  
+   correct and try again.
+   At line:1 char:1
+
+-   eslint --init
+-   ```
+      + CategoryInfo          : ObjectNotFound: (eslint:String) [], CommandNotFoundException
+      + FullyQualifiedErrorId : CommandNotFoundException
+    ```
+
+<strong>SOLUTION: </strong> Follow guide on official site https://eslint.org/docs/user-guide/getting-started
