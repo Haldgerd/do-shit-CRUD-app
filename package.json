@@ -1,0 +1,26 @@
+{
+  "name": "do-shit-crud-app",
+  "version": "1.0.0",
+  "description": "A CRUD to do application for bold designers and developers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haldgerd/do-shit-CRUD-app.git"
+  },
+  "keywords": [
+    "CRUD",
+    "todo",
+    "react",
+    "webpack",
+    "app"
+  ],
+  "author": "Laura \"Lorna\" Lesjak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Haldgerd/do-shit-CRUD-app/issues"
+  },
+  "homepage": "https://github.com/Haldgerd/do-shit-CRUD-app#readme"
+}
