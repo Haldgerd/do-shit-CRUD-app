@@ -1,50 +1,62 @@
 // import { resolve as _resolve } from "path";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-module.exports = (env) => {
-  // source mapping
-  const isProduction = env === "production";
+const setConfiguration = (env) => {
+    // source mapping
+    const isProduction = env === 'production';
 
-  return {
-    entry: "./index.jsx",
-    output: {
-      path: path.resolve(__dirname, "build"),
-      publicPath: "/",
-      filename: "bundle.js",
-    },
-    resolve: {
-      alias: {
-        components: path.resolve(__dirname, "src/components"),
-      },
-      extensions: [".js", ".jsx"],
-    },
-    devServer: {
-      contentBase: "./build",
-    },
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx)$/,
-          exclude: /node_modules/,
-          use: ["babel-loader"],
+    return {
+        entry: './src/index.js',
+        output: {
+            path: path.resolve(__dirname, './build/'),
+            publicPath: '/',
+            filename: 'bundle.js',
         },
-        {
-          test: /\.scss$/,
-          use: ["style-loader", "css-loader", "sass-loader"],
+        resolve: {
+            alias: {
+                components: path.resolve(__dirname, './src/components'),
+            },
+            extensions: ['.js', '.jsx'],
         },
-      ],
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: path.resolve("./index.html"),
-      }),
-    ],
-    devtool: isProduction ? "source-map" : "inline-source-map",
-  };
+        devServer: {
+            // contentBase: path.join(__dirname, './build'),
+            static: './',
+            compress: true,
+            port: 3000,
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.(js|jsx)$/,
+                    exclude: /node_modules/,
+                    use: ['babel-loader'],
+                },
+                {
+                    test: /\.s[ac]ss$/i,
+                    use: [
+                        // Creates `style` nodes from JS strings
+                        'style-loader',
+                        // Translates CSS into CommonJS
+                        'css-loader',
+                        // Compiles Sass to CSS
+                        'sass-loader',
+                    ],
+                },
+            ],
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: path.resolve('./public/index.html'),
+            }),
+        ],
+        devtool: isProduction ? 'source-map' : 'inline-source-map',
+    };
 };
+
+export default setConfiguration;
