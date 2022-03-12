@@ -1,7 +1,19 @@
 @use './variables';
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    background-color: variables.$color-primary-PinkPeach;
+}
+
 h1 {
     font-family: monospace;
     font-size: 4rem;
-    color: variables.$color-primary-PinkPeach;
+    color: variables.$color-primary-HeavenlyWhite;
 }
