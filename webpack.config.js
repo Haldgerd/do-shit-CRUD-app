@@ -34,7 +34,15 @@ module.exports = (env) => {
                 {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
-                    use: ['babel-loader', 'eslint-loader'],
+                    use: [
+                        {
+                            loader: 'babel-loader',
+                            preset: '@/babel-preset-env',
+                        },
+                        {
+                            loader: 'eslint-loader',
+                        },
+                    ],
                 },
                 {
                     test: /\.s[ac]ss$/i,
@@ -50,6 +58,15 @@ module.exports = (env) => {
                 {
                     test: /\.(png|jpg)$/,
                     type: 'asset/resource',
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        // Creates `style` nodes from JS strings
+                        'style-loader',
+                        // Translates CSS into CommonJS
+                        'css-loader',
+                    ],
                 },
             ],
         },
